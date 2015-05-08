@@ -1,0 +1,22 @@
+{
+    "name": "stephenjcorwin/silverstripe-icons",
+    "description": "SilverStripe module which provides an [Icon] DataObject and a Settings->Appearance->Icons menu for managing your website's Icons.",
+    "keywords": [
+        "silverstripe",
+        "icon"
+    ],
+    "type": "silverstripe-module",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Stephen Corwin",
+            "email": "stephenjcorwin@gmail.com",
+            "homepage": "http://stephenjcorwin.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.0",
+        "silverstripe/cms": ">=3.1.0"
+    }
+}
