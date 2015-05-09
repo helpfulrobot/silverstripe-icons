@@ -1,3 +1,3 @@
 <div class="icons-cms-preview">
-	<% include Icon %>
+	<% include Icon Data=$Data %>
 </div>

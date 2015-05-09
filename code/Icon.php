@@ -136,7 +136,7 @@ class Icon extends DataObject {
     $fields->addFieldToTab($tab, $field);
 
     $field = new TextField('FontAwesomeAnimation');
-    $field->setDescription('This class used animating the icon');
+    $field->setDescription('This class is used for animating the icon');
     $fields->addFieldToTab($tab, $field);
 
     $html = ViewableData::renderWith('Icons_CMS_Preview');
@@ -148,8 +148,9 @@ class Icon extends DataObject {
     */
 
     $tab = 'Root.Reference';
-
-    $html = ViewableData::renderWith('Icons_CMS_Instructions');
+    
+    $data = array('Data' => $this);
+    $html = ViewableData::renderWith('Icons_CMS_Instructions', $data);
     $field = new LiteralField('Reference', $html);
     $fields->addFieldToTab($tab, $field);
     
@@ -157,7 +158,8 @@ class Icon extends DataObject {
   }
 
   public function getCMSPreview() {
-    $html = ViewableData::renderWith('Icons_CMS_Preview');
+    $data = array('Data' => $this);
+    $html = ViewableData::renderWith('Icons_CMS_Preview', $data);
     $obj = HTMLText::create();
     $obj->setValue($html);
     return $obj;
