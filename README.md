@@ -118,7 +118,7 @@ Code Examples
 	</head>
 		<body>
 			<% if $MyIcon %>
-				<% include Icon Data=$MyIcon %>
+				<% with $MyIcon %><% include Icon %><% end_with %>
 			<% end_if %>
 			$Layout
 		</body>

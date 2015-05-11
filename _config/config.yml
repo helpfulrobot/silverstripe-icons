@@ -1,0 +1,11 @@
+---
+Name: silverstripe-icons
+---
+SiteConfig:
+  extensions:
+    - Icons_SiteConfigExtension
+
+LeftAndMain:
+  extra_requirements_css:
+    - silverstripe-icons/fonts/font-awesome-4.3.0/css/font-awesome.css
+    - silverstripe-icons/css/cms/min.css

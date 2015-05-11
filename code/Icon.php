@@ -4,18 +4,18 @@ class Icon extends DataObject {
     FIELDS
   **/
 
-  static $db = array (
+  private static $db = array (
     'Name' => 'Text',
     'FontAwesomeClass' => 'Text',
     'FontAwesomeAnimation' => 'Text'
   );
 
-  static $defaults = array (
+  private static $defaults = array (
   );
 
-  public static $default_sort='Name ASC';
+  private static $default_sort='Name ASC';
 
-  static $default_records = array (
+  private static $default_records = array (
     /* SOCIAL MEDIA */
     array (
       'Name' => 'Facebook',
@@ -108,7 +108,7 @@ class Icon extends DataObject {
     return true;
   }
 
-  static $summary_fields = array (
+  private static $summary_fields = array (
     'Name' => 'Name',
     'FontAwesomeClass' => 'Class',
     'FontAwesomeAnimation' => 'Animation',
@@ -148,9 +148,7 @@ class Icon extends DataObject {
     */
 
     $tab = 'Root.Reference';
-    
-    $data = array('Data' => $this);
-    $html = ViewableData::renderWith('Icons_CMS_Instructions', $data);
+    $html = ViewableData::renderWith('Icons_CMS_Instructions');
     $field = new LiteralField('Reference', $html);
     $fields->addFieldToTab($tab, $field);
     
@@ -158,8 +156,7 @@ class Icon extends DataObject {
   }
 
   public function getCMSPreview() {
-    $data = array('Data' => $this);
-    $html = ViewableData::renderWith('Icons_CMS_Preview', $data);
+    $html = ViewableData::renderWith('Icons_CMS_Preview');
     $obj = HTMLText::create();
     $obj->setValue($html);
     return $obj;
