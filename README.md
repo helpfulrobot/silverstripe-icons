@@ -13,9 +13,15 @@ Requirements
 ---------------------------------------
 -   SilverStripe 3.1
 
+Related
+---------------------------------------
+-   [stephenjcorwin/silverstripe-colors](https://github.com/stephenjcorwin/silverstripe-colors/)
+-   [stephenjcorwin/silverstripe-opacities](https://github.com/stephenjcorwin/silverstripe-opacities/)
+-   [stephenjcorwin/silverstripe-text](https://github.com/stephenjcorwin/silverstripe-text/)
+
 Features
 ---------------------------------------
--   Create and maintain sitewide Icons
+-   Create and maintain sitewide `Icons`
 
 Installation
 ---------------------------------------
@@ -27,7 +33,7 @@ Installation can be done either by composer or by manually downloading a release
 ####Manually:
 1.   Download the module from [the releases page](https://github.com/stephenjcorwin/silverstripe-icons/releases)
 2.   Extract the file
-3.   Make sure the folder after being extracted is name 'silverstripe-icons'
+3.   Make sure the folder after being extracted is name `silverstripe-icons`
 4.   Place this directory in your site's root directory
 
 ####Configuration:
