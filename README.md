@@ -52,8 +52,8 @@ Code Examples
 ####`mysite/code/MyDataObject.php`
     <?php
     class MyDataObject extends DataObject {
-        static $has_one = array (
-            'MyIcon' => 'Icon',
+        private static $has_one = array (
+            'MyIcon' => 'Icon'
         );
     
         public function getCMSFields() {
@@ -111,11 +111,9 @@ Code Examples
 		}
     }
 
-####`themes/themes/mytheme/templates/Page.ss`
+####`themes/mytheme/templates/Page.ss`
     <!DOCTYPE html>
-	<html lang="$ContentLocale">
-	<head>
-	</head>
+	<html>
 		<body>
 			<% if $MyIcon %>
 				<% with $MyIcon %><% include Icon %><% end_with %>

@@ -1,16 +1,13 @@
 <?php
 class Icon extends DataObject {
   /**
-    FIELDS
-  **/
+   * FIELDS
+   */
 
   private static $db = array (
     'Name' => 'Text',
     'FontAwesomeClass' => 'Text',
     'FontAwesomeAnimation' => 'Text'
-  );
-
-  private static $defaults = array (
   );
 
   private static $default_sort='Name ASC';
@@ -84,30 +81,6 @@ class Icon extends DataObject {
     ),
   );
 
-  /**
-    PERMISSIONS
-  **/
-
-  public function canEdit($member = NULL) {
-    return true;
-  }
-
-  public function canDelete($member = NULL) {
-    return true;
-  }
-
-  public function canCreate($member = NULL){
-    return true;
-  }
-
-  public function canPublish($member = NULL){
-    return true;
-  }
-
-  public function canView($member = NULL){
-    return true;
-  }
-
   private static $summary_fields = array (
     'Name' => 'Name',
     'FontAwesomeClass' => 'Class',
@@ -116,15 +89,15 @@ class Icon extends DataObject {
   );
 
   /**
-    CMS FIELDS
-  **/
+   * CMS FIELDS
+   */
 
   public function getCMSFields() {
     $fields = parent::getCMSFields();
     
-    /*
-      MAIN TAB
-    */
+    /**
+     * MAIN TAB
+     */
 
     $tab = 'Root.Main';
 
@@ -143,9 +116,9 @@ class Icon extends DataObject {
     $field = new LiteralField('Reference', $html);
     $fields->addFieldToTab($tab, $field);
 
-    /*
-      REFERENCE TAB
-    */
+    /**
+     * REFERENCE TAB
+     */
 
     $tab = 'Root.Reference';
     $html = ViewableData::renderWith('Icons_CMS_Instructions');
