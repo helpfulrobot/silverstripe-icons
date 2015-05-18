@@ -1,5 +1,5 @@
 <?php
-class Icons_SiteConfigExtension extends DataExtension {
+class Icon_SiteConfigExtension extends DataExtension {
   /**
    * CMS FIELDS
    */
