@@ -1,87 +1,88 @@
 <?php
-class Icon extends DataObject {
-  /**
+class Icon extends DataObject
+{
+    /**
    * FIELDS
    */
 
-  private static $db = array (
+  private static $db = array(
     'Name' => 'Text',
     'FontAwesomeClass' => 'Text',
     'FontAwesomeAnimation' => 'Text'
   );
 
-  private static $default_sort='Name ASC';
+    private static $default_sort='Name ASC';
 
-  private static $default_records = array (
+    private static $default_records = array(
     /* SOCIAL MEDIA */
-    array (
+    array(
       'Name' => 'Facebook',
       'FontAwesomeClass' => 'fa-facebook'
     ),
-    array (
+    array(
       'Name' => 'Twitter',
       'FontAwesomeClass' => 'fa-twitter'
     ),
-    array (
+    array(
       'Name' => 'YouTube',
       'FontAwesomeClass' => 'fa-youtube'
     ),
-    array (
+    array(
       'Name' => 'LinkedIn',
       'FontAwesomeClass' => 'fa-linkedin'
     ),
     /* ARROWS */
-    array (
+    array(
       'Name' => 'Chevron Up',
       'FontAwesomeClass' => 'fa-chevron-up'
     ),
-    array (
+    array(
       'Name' => 'Chevron Down',
       'FontAwesomeClass' => 'fa-chevron-down'
     ),
-    array (
+    array(
       'Name' => 'Chevron Left',
       'FontAwesomeClass' => 'fa-chevron-left'
     ),
-    array (
+    array(
       'Name' => 'Chevron Right',
       'FontAwesomeClass' => 'fa-chevron-right'
     ),
-    array (
+    array(
       'Name' => 'Long Arrow Up',
       'FontAwesomeClass' => 'fa-long-arrow-up'
     ),
-    array (
+    array(
       'Name' => 'Long Arrow Down',
       'FontAwesomeClass' => 'fa-long-arrow-down'
     ),
-    array (
+    array(
       'Name' => 'Long Arrow Left',
       'FontAwesomeClass' => 'fa-long-arrow-left'
     ),
-    array (
+    array(
       'Name' => 'Long Arrow Right',
       'FontAwesomeClass' => 'fa-long-arrow-right'
     ),
     /* SPINNERS */
-    array (
+    array(
       'Name' => 'Spinner Default',
       'FontAwesomeClass' => 'fa-spinner',
       'FontAwesomeAnimation' => 'fa-spin'
     ),
-    array (
+    array(
       'Name' => 'Spinner Refresh',
       'FontAwesomeClass' => 'fa-refresh',
       'FontAwesomeAnimation' => 'fa-spin'
     ),
     /* NAVIGATION */
-    array (
+    array(
       'Name' => 'Menu',
       'FontAwesomeClass' => 'fa-navicon'
     ),
   );
 
-  private static $summary_fields = array (
+    private static $summary_fields = array(
     'Name' => 'Name',
     'FontAwesomeClass' => 'Class',
     'FontAwesomeAnimation' => 'Animation',
@@ -92,8 +93,9 @@ class Icon extends DataObject {
    * CMS FIELDS
    */
 
-  public function getCMSFields() {
-    $fields = parent::getCMSFields();
+  public function getCMSFields()
+  {
+      $fields = parent::getCMSFields();
     
     /**
      * MAIN TAB
@@ -101,32 +103,33 @@ class Icon extends DataObject {
 
     $tab = 'Root.Main';
 
-    $field = new TextField('Name');
-    $fields->addFieldToTab($tab, $field);
+      $field = new TextField('Name');
+      $fields->addFieldToTab($tab, $field);
 
-    $html = ViewableData::renderWith('Icon_CMS_Instructions');
-    $field = new LiteralField('Reference', $html);
-    $fields->addFieldToTab($tab, $field);
+      $html = ViewableData::renderWith('Icon_CMS_Instructions');
+      $field = new LiteralField('Reference', $html);
+      $fields->addFieldToTab($tab, $field);
 
-    $field = new TextField('FontAwesomeClass');
-    $field->setDescription('This class is used for the icon');
-    $fields->addFieldToTab($tab, $field);
+      $field = new TextField('FontAwesomeClass');
+      $field->setDescription('This class is used for the icon');
+      $fields->addFieldToTab($tab, $field);
 
-    $field = new TextField('FontAwesomeAnimation');
-    $field->setDescription('This class is used for animating the icon');
-    $fields->addFieldToTab($tab, $field);
+      $field = new TextField('FontAwesomeAnimation');
+      $field->setDescription('This class is used for animating the icon');
+      $fields->addFieldToTab($tab, $field);
 
-    $html = ViewableData::renderWith('Icon_CMS_Preview');
-    $field = new LiteralField('Reference', $html);
-    $fields->addFieldToTab($tab, $field);
+      $html = ViewableData::renderWith('Icon_CMS_Preview');
+      $field = new LiteralField('Reference', $html);
+      $fields->addFieldToTab($tab, $field);
     
-    return $fields;
+      return $fields;
   }
 
-  public function getCMSPreview() {
-    $html = ViewableData::renderWith('Icon_CMS_Preview');
-    $obj = HTMLText::create();
-    $obj->setValue($html);
-    return $obj;
-  }
+    public function getCMSPreview()
+    {
+        $html = ViewableData::renderWith('Icon_CMS_Preview');
+        $obj = HTMLText::create();
+        $obj->setValue($html);
+        return $obj;
+    }
 }
